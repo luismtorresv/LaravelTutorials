@@ -8,10 +8,10 @@ use Illuminate\View\View;
 class ProductController extends Controller
 {
     public static $products = [
-        ['id' => '1', 'name' => 'TV', 'description' => 'Worst TV'],
-        ['id' => '2', 'name' => 'iPhone', 'description' => 'Worst iPhone'],
-        ['id' => '3', 'name' => 'Chromecast', 'description' => 'Worst Chromecast'],
-        ['id' => '4', 'name' => 'Glasses', 'description' => 'Worst Glasses'],
+        ['id' => '1', 'name' => 'TV', 'description' => 'Worst TV', 'price' => 420000000],
+        ['id' => '2', 'name' => 'iPhone', 'description' => 'Worst iPhone', 'price' => 240000000],
+        ['id' => '3', 'name' => 'Chromecast', 'description' => 'Worst Chromecast', 'price' => 120000000],
+        ['id' => '4', 'name' => 'Glasses', 'description' => 'Worst Glasses', 'price' => 60000000],
     ];
 
     public function index(): View
