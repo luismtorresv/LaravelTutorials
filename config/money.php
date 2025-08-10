@@ -4,7 +4,7 @@ return [
 
     'defaults' => [
 
-        'currency' => env('MONEY_DEFAULTS_CURRENCY', 'COP'),
+        'currency' => env('MONEY_DEFAULTS_CURRENCY', 'USD'),
 
         'convert' => env('MONEY_DEFAULTS_CONVERT', false),
 
@@ -1622,7 +1622,7 @@ return [
             'name' => 'US Dollar',
             'code' => 840,
             'precision' => 2,
-            'subunit' => 100,
+            'subunit' => 1,
             'symbol' => '$',
             'symbol_first' => true,
             'decimal_mark' => '.',

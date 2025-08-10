@@ -13,7 +13,11 @@
                         {{ $viewData['product']['name'] }}
                     </h5>
                     <p class="card-text">{{ $viewData['product']['description'] }}</p>
-                    <p class="card-text">{{ money($viewData['product']['price']) }}</p>
+                    @php
+                        $priceAsInt = $viewData['product']['price'];
+                        $priceAsMoney = money($priceAsInt);
+                    @endphp
+                    <p @class(['card-text', 'expensive' => $priceAsInt > 100])>{{ $priceAsMoney }}</p>
                 </div>
             </div>
         </div>
