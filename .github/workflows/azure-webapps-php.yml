@@ -3,6 +3,11 @@ name: Build and deploy PHP app to Azure Web App
 on:
   push:
     branches: [ "latest" ]
+    paths-ignore:
+      - '/.github'
+      - '.editorconfig'
+      - '.env.example'
+      - 'README.md'
   workflow_dispatch:
 
 env:
