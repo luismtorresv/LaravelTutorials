@@ -50,6 +50,8 @@ class ProductController extends Controller
             'price' => ['required', 'gt:0', 'integer'],
         ]);
 
+        Product::create($request->only(['name', 'price']));
+
         return redirect('/products/create/success');
     }
 
