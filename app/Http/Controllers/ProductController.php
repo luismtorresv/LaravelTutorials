@@ -2,25 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class ProductController extends Controller
 {
-    public static $products = [
-        ['id' => '1', 'name' => 'TV', 'description' => 'Worst TV', 'price' => 42],
-        ['id' => '2', 'name' => 'iPhone', 'description' => 'Worst iPhone', 'price' => 240_000],
-        ['id' => '3', 'name' => 'Chromecast', 'description' => 'Worst Chromecast', 'price' => 1_200_000],
-        ['id' => '4', 'name' => 'Glasses', 'description' => 'Worst Glasses', 'price' => 60],
-    ];
-
     public function index(): View
     {
         $viewData = [];
         $viewData['title'] = 'Products - Internet Store';
         $viewData['subtitle'] = 'List of products';
-        $viewData['products'] = ProductController::$products;
+        $viewData['products'] = Product::all();
 
         return view('product.index')->with('viewData', $viewData);
     }
@@ -28,7 +22,7 @@ class ProductController extends Controller
     public function show(string $id): View|RedirectResponse
     {
         $viewData = [];
-        $product = @ProductController::$products[(int) $id - 1];
+        $product = @Product::findOrFail($id);
 
         if (! $product) {
             return redirect()->route('home.index');

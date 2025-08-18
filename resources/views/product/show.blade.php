@@ -12,7 +12,6 @@
                     <h5 class="card-title">
                         {{ $viewData['product']['name'] }}
                     </h5>
-                    <p class="card-text">{{ $viewData['product']['description'] }}</p>
                     @php
                         $priceAsInt = $viewData['product']['price'];
                         $priceAsMoney = money($priceAsInt);
