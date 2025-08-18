@@ -17,6 +17,14 @@
                         $priceAsMoney = money($priceAsInt);
                     @endphp
                     <p @class(['card-text', 'expensive' => $priceAsInt > 100])>{{ $priceAsMoney }}</p>
+
+                    @if ($viewData['product']->comments)
+                        <ul>
+                            @foreach ($viewData['product']->comments as $comment)
+                                <li>{{ $comment->getDescription() }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
                 </div>
             </div>
         </div>
