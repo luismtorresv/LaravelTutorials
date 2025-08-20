@@ -24,10 +24,6 @@ class ProductController extends Controller
         $viewData = [];
         $product = @Product::findOrFail($id);
 
-        if (! $product) {
-            return redirect()->route('home.index');
-        }
-
         $viewData['title'] = $product['name'].' - Internet Store';
         $viewData['subtitle'] = $product['name'].' - Product information';
         $viewData['product'] = $product;
