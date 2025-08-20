@@ -59,9 +59,4 @@ class Product extends Model
     {
         return $this->comments;
     }
-
-    public function setComments(Collection $comments): void
-    {
-        $this->comments = $comments;
-    }
 }

@@ -53,13 +53,8 @@ class Comment extends Model
         return $this->belongsTo(Product::class);
     }
 
-    public function getProduct(): Product
+    public function getProduct(): ?Model
     {
         return $this->product;
-    }
-
-    public function setProduct($product): void
-    {
-        $this->product = $product;
     }
 }
