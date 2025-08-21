@@ -15,7 +15,7 @@
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
-                        <img src="{{ URL::asset('storage/test.png') }}" />
+                        <img src="{{ URL::asset('storage/test.png') }}" class="img-fluid" />
                     </div>
                 </div>
             </div>
