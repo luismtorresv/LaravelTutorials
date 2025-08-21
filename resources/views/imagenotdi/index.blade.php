@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Image Storage - Dependency Injection')
+@section('title', 'Image Storage - Without Dependency Injection')
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
