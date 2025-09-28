@@ -18,3 +18,9 @@ Route::prefix('v2')->group(function () {
     Route::get('products', 'App\Http\Controllers\Api\ProductApiControllerV2@index')->name('api.v2.product.index');
     Route::get('products/{id}', 'App\Http\Controllers\Api\ProductApiControllerV2@show')->name('api.v2.product.show');
 });
+
+// We add in pagination and remove the endpoint for each individual product.
+Route::prefix('v3')->group(function () {
+    Route::get('products', 'App\Http\Controllers\Api\ProductApiControllerV3@index')->name('api.v3.product.index');
+    Route::get('products/paginate', 'App\Http\Controllers\Api\ProductApiControllerV3@paginate')->name('api.v3.product.paginate');
+});

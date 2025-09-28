@@ -4,18 +4,17 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
-use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class ProductApiControllerV2 extends Controller
+class ProductApiControllerV3 extends Controller
 {
     public function index(): ResourceCollection
     {
         return Product::all()->toResourceCollection();
     }
 
-    public function show(string $id): JsonResource
+    public function paginate(): ResourceCollection
     {
-        return Product::findOrFail($id)->toResource();
+        return Product::paginate(5)->toResourceCollection();
     }
 }
