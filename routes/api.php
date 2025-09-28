@@ -10,6 +10,7 @@ Route::get('/user', function (Request $request) {
 // Converting the model into JSON with ALL of its parameters (created_at and
 // updated_at, etc.), which is not ideal.o
 Route::get('/products', 'App\Http\Controllers\Api\ProductApiController@index')->name('api.product.index');
+Route::post('/products/create', 'App\Http\Controllers\Api\ProductApiController@create')->name('api.product.create');
 Route::get('/products/{id}', 'App\Http\Controllers\Api\ProductApiController@show')->name('api.product.show');
 
 // New version that uses the Resource and Collection facilities from Eloquent so
