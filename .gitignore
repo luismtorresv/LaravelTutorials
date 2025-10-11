@@ -22,3 +22,7 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Google Cloud credentials for Cloud SQL Auth Proxy.
+gcp-service-account-key.json
+**/gcp-service-account-key.json
